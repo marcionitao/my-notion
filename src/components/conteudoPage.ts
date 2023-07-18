@@ -7,6 +7,7 @@ export const conteudoPage = `
   <p>O Tailwind CSS fornece uma abordagem de design "utilities-first", onde você combina classes para criar estilos personalizados. Isso oferece uma flexibilidade enorme para personalizar o visual dos componentes, permitindo criar designs exclusivos sem se limitar a um conjunto fixo de estilos pré-definidos.</p>
   <p><strong>3. Responsividade:</strong></p>
   <p>O Tailwind CSS possui classes responsivas embutidas que facilitam a criação de layouts responsivos para diferentes tamanhos de tela. Com classes como <code>sm</code>, <code>md</code>, <code>lg</code> e <code>xl</code>, você pode ajustar a aparência dos componentes em dispositivos móveis, tablets e desktops.</p>
+  <pre><code class="language-javascript">console.log('Hello Tailwind!)</code></pre>
   <h2>Desvantagens</h2>
   <p><strong>1. Tamanho do bundle:</strong></p>
   <p>Uma desvantagem do Tailwind CSS é que ele pode aumentar o tamanho do bundle final do seu aplicativo. Como o Tailwind CSS possui muitas classes utilitárias, todas essas classes precisam ser incluídas no arquivo CSS final, o que pode resultar em um arquivo maior do que o necessário.</p>
