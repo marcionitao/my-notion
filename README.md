@@ -6,4 +6,5 @@
 - React
 - TailwindCSS
 - TailwindCSS/Typography
+- TipTap Editor
 - Vite
