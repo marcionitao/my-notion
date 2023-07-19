@@ -3,7 +3,7 @@ module.exports = {
   env: { browser: true, es2020: true },
   extends: [
     'eslint:recommended',
-    "@rocketseat/eslint-config/react",
+    'plugin:@rocketseat/eslint-config/react',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:react-hooks/recommended',
@@ -25,6 +25,7 @@ module.exports = {
       'arrowParens': 'always',
       'endOfLine': 'auto',
       'semi': false,
+      "singleAttributePerLine": true
 
     }],
     'react-refresh/only-export-components': [

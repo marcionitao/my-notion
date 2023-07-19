@@ -5,7 +5,14 @@ import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import javascript from 'highlight.js/lib/languages/javascript'
 import { conteudoPage } from './conteudoPage'
 
-import { RxFontBold, RxFontItalic, RxStrikethrough, RxCode, RxChevronDown, RxChatBubble } from "react-icons/rx";
+import {
+  RxFontBold,
+  RxFontItalic,
+  RxStrikethrough,
+  RxCode,
+  RxChevronDown,
+  RxChatBubble,
+} from 'react-icons/rx'
 
 import 'highlight.js/styles/atom-one-dark.css'
 
@@ -22,28 +29,27 @@ export default function Editor() {
     content: conteudoPage,
     editorProps: {
       attributes: {
-        class: 'outline-none'
-      }
-    }
+        class: 'outline-none',
+      },
+    },
   })
   return (
     <>
       <EditorContent
-        className='max-w-[700px] mx-auto pt-16 prose prose-violet'
+        className="max-w-[700px] mx-auto pt-16 prose prose-violet"
         editor={editor}
       />
       {/* se o editor estiver ativo executo o BubbleMenu */}
       {editor && (
-        <BubbleMenu className="flex overflow-hidden border divide-x rounded-lg shadow-xl divide-zinc-600 bg-zinc-100 border-zinc-600 shadow-black/20 " editor={editor}>
-          <button
-            className="flex items-center p-2 text-sm text-zinc-600 gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-400"
-          >
+        <BubbleMenu
+          className="flex overflow-hidden border divide-x rounded-lg shadow-xl divide-zinc-600 bg-zinc-100 border-zinc-600 shadow-black/20 "
+          editor={editor}
+        >
+          <button className="flex items-center p-2 text-sm text-zinc-600 gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-400">
             Text
             <RxChevronDown className="w-4 h-4" />
           </button>
-          <button
-            className="flex items-center p-2 text-sm text-zinc-600 gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-400"
-          >
+          <button className="flex items-center p-2 text-sm text-zinc-600 gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-400">
             Comment
             <RxChatBubble className="w-4 h-4" />
           </button>
@@ -78,7 +84,8 @@ export default function Editor() {
               <RxCode className="w-4 h-4" />
             </button>
           </div>
-        </BubbleMenu>)}
+        </BubbleMenu>
+      )}
     </>
   )
 }

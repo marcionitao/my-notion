@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "@rocketseat/eslint-config/react"
+  ],
+  "ignorePatterns": [
+    "**/index.html"
+  ],
+  "rules": {
+    "@typescript-eslint/no-non-null-assertion": "off"
+  }
+}

@@ -16,4 +16,3 @@ export const conteudoPage = `
   <p><strong>3. Personalização limitada:</strong></p>
   <p>Embora o Tailwind CSS seja flexível, há casos em que você pode precisar de estilos mais personalizados que não são facilmente alcançados apenas com as classes utilitárias. Nesses casos, pode ser necessário escrever CSS personalizado adicional ou usar classes do Tailwind CSS em conjunto com estilos personalizados.</p>
 `
-
