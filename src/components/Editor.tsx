@@ -1,4 +1,9 @@
-import { useEditor, EditorContent, BubbleMenu } from '@tiptap/react'
+import {
+  useEditor,
+  EditorContent,
+  BubbleMenu,
+  FloatingMenu,
+} from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import { lowlight } from 'lowlight'
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
@@ -39,6 +44,54 @@ export default function Editor() {
         className="max-w-[700px] mx-auto pt-16 prose prose-violet"
         editor={editor}
       />
+      {/* se o editor estiver ativo executo o floatingMenu */}
+      {editor && (
+        <FloatingMenu
+          shouldShow={({ state }) => {
+            // localizar o cursor no inicio do texto
+            const { $from } = state.selection
+            const currentLineText = $from.nodeBefore?.textContent
+            return currentLineText === '/'
+          }}
+          className="flex flex-col gap-1 px-1 py-2 overflow-hidden border rounded-lg shadow-xl bg-zinc-100 border-zinc-600 shadow-black/20 "
+          editor={editor}
+        >
+          {/* botão para adicionar texto simples */}
+          <button className="flex items-center gap-2 p-1 rounded min-w-[280px] hover:bg-zinc-400">
+            <img
+              src="http://www.notion.so/images/blocks/text/en-US.png"
+              alt="Text"
+              className="w-10 border rounded border-zinc-600"
+            />
+            <div className="flex flex-col text-left">
+              <span className="text-sm">Text</span>
+              <span className="text-xs text-zinc-500">
+                Just start writing with plan text.
+              </span>
+            </div>
+          </button>
+
+          {/* botão para adicionar texto h1 */}
+          <button
+            className="flex items-center gap-2 p-1 rounded min-w-[280px] hover:bg-zinc-400"
+            onClick={() =>
+              editor.chain().focus().toggleHeading({ level: 1 }).run()
+            }
+          >
+            <img
+              src="http://www.notion.so/images/blocks/header.57a7576a.png"
+              alt="Heading"
+              className="w-10 border rounded border-zinc-600"
+            />
+            <div className="flex flex-col text-left">
+              <span className="text-sm">Heading 1</span>
+              <span className="text-xs text-zinc-500">
+                Big section heading.
+              </span>
+            </div>
+          </button>
+        </FloatingMenu>
+      )}
       {/* se o editor estiver ativo executo o BubbleMenu */}
       {editor && (
         <BubbleMenu
